@@ -168,6 +168,7 @@ on:
           - zcube1-max
           - zk-r39a
           - zysj
+          - Onething-OEC-Efused
       armbian_kernel:
         description: "Select kernel version."
         required: false
