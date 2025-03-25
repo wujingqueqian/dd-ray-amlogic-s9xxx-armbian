@@ -170,6 +170,7 @@ on:
           - tvi3315a
           - vplus
           - wxy-oec
+          - efused-wxy-oec
           - xiaobao
           - yskj
           - zcube1-max
@@ -185,6 +186,8 @@ on:
           - 5.10.y
           - 5.15.y
           - 6.1.y
+          - 6.1.75
+          - 6.1.99
           - 6.6.y
           - 6.12.y
           - 5.4.y_5.10.y
@@ -300,7 +303,7 @@ jobs:
           df -hT ${PWD}
           git clone -q --single-branch --depth=1 --branch=main https://github.com/armbian/build.git build
           ln -sf /builder/build ${GITHUB_WORKSPACE}/build
-          ln -sf /builder/build /home/runner/work/_actions/ophub/amlogic-s9xxx-armbian/main/build
+          ln -sf /builder/build /home/runner/work/_actions/stock169/amlogic-s9xxx-armbian/main/build
           # 下载扩展的安装homeasssistant脚本
           wget -P ./build/extensions https://raw.githubusercontent.com/armbian/os/main/userpatches/extensions/docker-ce.sh
           wget -P ./build/extensions https://raw.githubusercontent.com/armbian/os/main/userpatches/extensions/ha.sh
@@ -343,7 +346,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Rebuild Armbian
-        uses: ophub/amlogic-s9xxx-armbian@main
+        uses: stock169/amlogic-s9xxx-armbian@main
         if: ${{ steps.clean.outputs.status }} == 'success' && !cancelled()
         with:
           build_target: armbian
