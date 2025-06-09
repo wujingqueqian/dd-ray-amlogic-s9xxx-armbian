@@ -1,4 +1,4 @@
-# Armbian
+# 本仓库fork自dd-ray amlogic-s9xxx-armbian，仅作为个人测试用，刷机下载请找dd-ray大佬
 
 View Chinese description | [查看中文说明](README.cn.md)
 
